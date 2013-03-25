@@ -141,15 +141,15 @@
 			        titlelow = entry.title.toLowerCase(),
 			        everythinglow = datelow + titlelow + textlow;
 			        
-			        if ( searchbox ) {
-			           searchbox = searchbox.toLowerCase();
-			        }
+			    if ( searchbox ) {
+			       searchbox = searchbox.toLowerCase();
+			    }
 			        
-			        if ( search ) {
-			           searchlow = search.toLowerCase();
-			        } else {
-			           search = 'all';
-			        }
+			    if ( search ) {
+			       searchlow = search.toLowerCase();
+			    } else {
+			       search = 'all';
+			    }
 
 // search title, date and text and also
 // allow the word 'all' to be searched
@@ -164,10 +164,6 @@
 			})
 
 			return entries;
-		},
-
-		count: function(search) {
-			return this.filter(search).length;
 		}
 	});
 	
@@ -243,33 +239,33 @@
 
 // clear all previous entries
 
-           this.element.html("");
+		    this.element.html("");
 
 // add filtered entries
 
-		   this.element.html(can.view('views/entryList.ejs', {
-		      entries: entriesNew
-		   }));
+		    this.element.html(can.view('views/entryList.ejs', {
+		       entries: entriesNew
+		    }));
 
 // remove previous Pager controller if one exists so it can be replaced
 
-           if ( _pagerControl ) {
-              _pagerControl.destroy();
-           }
+		    if ( _pagerControl ) {
+		       _pagerControl.destroy();
+		    }
 
 // reset Pager controller with new list of filtered entries
 			
-			if ( entryCount > _entriesPerPage ) {
-			    $('#entryCount').text( entryCount + " Entries" );
-			} else {
-			    $('#entryCount').text("");
-			}
+		    if ( entryCount > _entriesPerPage ) {
+		       $('#entryCount').text( entryCount + " Entries" );
+		    } else {
+		       $('#entryCount').text("");
+		    }
 
-		   _pagerControl = new Pager('#pager', {
-		      entries: entriesNew
-		   });
+		    _pagerControl = new Pager('#pager', {
+		       entries: entriesNew
+		    });
 		}
-	});
+	});   // end of Entries control
 	
 /*
  * Search (filter) control for blog entries.
@@ -323,7 +319,7 @@
  */
 	Pager = can.Control({
 		init: function(){
-           this._displayPagination( this.options.entries, 1  );
+		   this._displayPagination( this.options.entries, 1  );
 		},
 		
 /*
@@ -335,7 +331,7 @@
 		'.pagelink click': function(el, ev) {
 		   var page = parseInt( el.attr('data-page') );
 
-           this._displayPagination( this.options.entries, page );
+		   this._displayPagination( this.options.entries, page );
 		},
 		
 /*
@@ -355,27 +351,27 @@
 
 // clear all previous page links
 
-           this.element.html("");
+		   this.element.html("");
 
 // display page links
 
 		   if ( pageCount > 1 ) {
-			  this.element.html(can.view('views/pageList.ejs', {
-			     pages: pageCount
-			  }));
+		     this.element.html(can.view('views/pageList.ejs', {
+		        pages: pageCount
+		      }));
 		   }
 
 // hide all but the current page of entries
 
-           entryli.each(function() {
-              $(this).hide();  // make sure all entries start out as hidden
-           });
+		   entryli.each(function() {
+		      $(this).hide();  // make sure all entries start out as hidden
+		   });
 
-           for ( var i = 0; i < _entriesPerPage; i++ ) {
-              currentIndex = ( (page - 1) * _entriesPerPage ) + i;
-              entryli.eq(currentIndex).show();
-           }
-        }
+		   for ( var i = 0; i < _entriesPerPage; i++ ) {
+		      currentIndex = ( (page - 1) * _entriesPerPage ) + i;
+		      entryli.eq(currentIndex).show();
+		   }
+		}
 	});   // end of Pager control
 
 /*
@@ -387,18 +383,18 @@
 
 	$(document).ready(function(){
 		$.when(Entry.findAll()).then(function(entryResponse){
-			var entries = entryResponse;
+		   var entries = entryResponse;
 
 // The search control must come first so a search value can be set
 // in a link on another web page. The search value must be set ahead 
 // of time so the entries will be filtered.
 
-			new Search('#search', {
-			});
+		   new Search('#search', {
+		   });
 			
-			new Entries('#entries', {
-				entries: entries
-			});
+		   new Entries('#entries', {
+		      entries: entries
+		   });
 		});
 	});
 })();
