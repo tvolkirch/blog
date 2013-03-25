@@ -155,17 +155,17 @@
 // allow the word 'all' to be searched
 
 			    if ( (searchlow === 'all') && (searchbox !== 'all') ) {
-					entries.push(entry)
+			       entries.push(entry)
 			    } else {
-				    if ( everythinglow.indexOf(searchbox) !== -1 ) {
-					   entries.push(entry)
-					}
-				}
+			       if ( everythinglow.indexOf(searchbox) !== -1 ) {
+			          entries.push(entry)
+			       }
+			    }
 			})
 
 			return entries;
 		}
-	});
+	});   // end of Entry.List
 	
 /*
  * Load blog entries model data.
