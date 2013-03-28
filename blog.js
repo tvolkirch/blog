@@ -16,6 +16,15 @@
 (function(){
 	var ENTRIES = [
 		{
+			id: 11,
+			imagesrc: 'images/Kiahuna.jpg',
+			imagealt: 'Kiahuna Beach',
+			imagetitle: 'Kiahuna Beach on Kauai, Hawaii',
+			date: 'March 25, 2013',
+			title: 'The 80/20 Rule for Software Development',
+			text: "<p>I've seen the rule stated as 80 percent of the work takes 20 percent of the time, but that's not accurate. Someone tried to correct it by stating that after 20 percent of the work, the software appears to be 80 percent complete. The second version might help manage expectations but it doesn't really help very much with software development.</p><p>My version of the 80/20 rule is that 80 percent of the features are relatively easy to implement and the remaining 20 percent are not worth adding, at least not right away. The trick is to prioritize and choose which features to implement. It helps to resist redundancy and postpone nice but not necessary features for later releases.</p>"
+		},
+		{
 			id: 10,
 			imagesrc: 'images/blank.gif',
 			imagealt: '',
@@ -31,7 +40,7 @@
 			imagetitle: 'Spouting Horn on Kauai, Hawaii',
 			date: 'March 21, 2013',
 			title: 'Exceptions to the Rule',
-			text: "<p>Is it really so important or even possible to always write perfect code? It's more than reasonable to expect sluggish performance and broken functionality to be fixed but I don't know that it's so important to follow every standard and style convention. I like to think that there's room for some individuality in the software world. Everyone is different.</p>"
+			text: "<p>Is it really so important or even possible to always write perfect code? It's more than reasonable to expect sluggish performance and broken functionality to be fixed but I don't know that it's so important to follow every standard and style convention. I like to think that there's room for some individuality in the software world.</p><p>I can think of at least one example of a good exception. The target attribute for HTML anchor tags used to be deprecated but that's no longer the case with HTML5. I continued to use the target attribute even when it was deprecated.</p>"
 		},
 		{
 			id: 8,
@@ -257,6 +266,8 @@
 			
 		    if ( entryCount > _entriesPerPage ) {
 		       $('#entryCount').text( entryCount + " Entries" );
+		    } else if ( entryCount === 0) {
+		       $('#entryCount').text("No matching entries found.");
 		    } else {
 		       $('#entryCount').text("");
 		    }
