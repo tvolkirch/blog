@@ -164,13 +164,13 @@
 // allow the word 'all' to be searched
 
 			    if ( (searchlow === 'all') && (searchbox !== 'all') ) {
-			       entries.push(entry)
+			       entries.push(entry);
 			    } else {
 			       if ( everythinglow.indexOf(searchbox) !== -1 ) {
-			          entries.push(entry)
+			          entries.push(entry);
 			       }
 			    }
-			})
+			});
 
 			return entries;
 		}
@@ -189,7 +189,7 @@
 	var id= 8;
 	can.fixture("POST /entries", function(){
 		// just need to send back a new id
-		return {id: (id++)}
+		return {id: (id++)};
 	});
 
 	// update - not used
@@ -340,7 +340,7 @@
 // change display of entries after clicking on a page link
 
 		'.pagelink click': function(el, ev) {
-		   var page = parseInt( el.attr('data-page') );
+		   var page = parseInt( el.attr('data-page'), 10 );
 
 		   this._displayPagination( this.options.entries, page );
 		},
