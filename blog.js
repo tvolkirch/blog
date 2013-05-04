@@ -31,7 +31,7 @@
 			imagetitle: '',
 			date: 'March 21, 2013',
 			title: 'HTML to PDF',
-			text: "<p>I have yet to find anything comparable to wkhtmltopdf for converting HTML to a PDF file. No other tools work as well as this shell utility.</p><p>This utility uses the webkit rending engine for the conversion, taking CSS into account when it does the conversion. There are loads of options like page size that give the tool a lot of flexibility and it's very fast.</p>"
+			text: "<p>I have yet to find anything comparable to wkhtmltopdf for converting HTML to a PDF file. No other tools work as well as this shell utility.</p><p>This utility uses the webkit rendering engine for the conversion, taking CSS into account when it does the conversion. There are loads of options, like page size, that give the tool a lot of flexibility, and it's very fast.</p>"
 		},
 		{
 			id: 9,
