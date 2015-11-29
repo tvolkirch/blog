@@ -1,7 +1,7 @@
 blog
 ====
 
-Summary: CanJS application for the blog page of my website: http://terry.hp.af.cm/index.html
+Summary: CanJS application for the blog page of my former website. My website is not being hosted at this time.
 
 
 Description:
